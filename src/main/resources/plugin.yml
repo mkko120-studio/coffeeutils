@@ -2,7 +2,7 @@ name: Coffeeutils
 version: ${project.version}
 main: studio.mkko120.coffeeutils.Coffeeutils
 api-version: 1.16
-prefix: [ Coffeeutils ]
+prefix: Coffeeutils
 authors: [ mkko120 ]
 description: Utils plugin
 website: mkko120.studio
