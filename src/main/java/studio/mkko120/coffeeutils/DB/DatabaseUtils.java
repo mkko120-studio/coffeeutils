@@ -9,7 +9,7 @@ public class DatabaseUtils {
         Statement smt = null;
         ResultSet rs = null;
         try {
-            con = DriverManager.getConnection("jdbc:mariadb://localhost:3306",
+            con = DriverManager.getConnection("jdbc:mariadb://localhost:3306/minecraft",
                 "luckperms",
                 "password");
             smt = con.createStatement();

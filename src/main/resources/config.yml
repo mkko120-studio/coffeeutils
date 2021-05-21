@@ -1,0 +1,14 @@
+#
+# Plugin by mkko120
+# made for StoreCraft.pl
+#
+# ###BEGIN#CONFIG###
+
+# Database credentials, replace those with your own:
+Database:
+  name: minecraft
+  address:
+  port:
+  password:
+
+# ###END#CONFIG###

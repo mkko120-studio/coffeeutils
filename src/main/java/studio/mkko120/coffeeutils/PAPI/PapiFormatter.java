@@ -17,10 +17,11 @@ public class PapiFormatter {
                 if (top10.size() <=10 ) {
                     top10.add(user);
                 } else {
-                    for (int i = 10; i > 0; i--) {
+                    int i = Math.min(all.size(), 10);
+                    while (i > 0) {
                         if (user.getKDR() > top10.get(i).getKDR()) {
                             PvPUser tempuser = top10.get(i);
-                            for (int i1 = i; i1 < 10; i1++) {
+                            for (int i1 = i; i1 <= 9; i1++) {
                                 PvPUser tempuser2 = top10.get(i1+1);
                                 if (tempuser2 == tempuser) {
                                     top10.set(i1 + 1, tempuser);
@@ -31,11 +32,13 @@ public class PapiFormatter {
                             top10.set(i, user);
                             break;
                         }
+                        i--;
                     }
                 }
             }
         }
 
+        topKDR.append("Najlepsze KDR:\n");
         for (int i = 0; i < 10; i++) {
             PvPUser user = top10.get(i);
             topKDR.append(i).append(". ").append(user.getName()).append(": KDR: ").append(user.getKDR()).append("\n");
@@ -48,7 +51,7 @@ public class PapiFormatter {
 
     public static String topDeaths() {
         StringBuilder topdeaths = new StringBuilder();
-        ArrayList<PvPUser> all = (ArrayList<PvPUser>) Coffeeutils.getInstance().getPvPManager().getInstances().values();
+        ArrayList<PvPUser> all = new ArrayList<>(Coffeeutils.getInstance().getPvPManager().getInstances().values());
         ArrayList<PvPUser> top10 = new ArrayList<>();
 
         for (PvPUser user : all) {
@@ -56,15 +59,9 @@ public class PapiFormatter {
                 if (top10.size() <=10 ) {
                     top10.add(user);
                 } else {
-                    for (int i = 10; i > 0; i--) {
+                    int i = Math.min(all.size(), 10);
+                    while (i > 0) {
                         if (user.getDeaths() > top10.get(i).getDeaths()) {
-                            /*
-                             * 1. 15
-                             * 2. 12
-                             * 3. 10
-                             * 4. 7
-                             * ...
-                             */
                             PvPUser tempuser = top10.get(i);
                             for (int i1 = i; i1 < 10; i1++) {
                                 PvPUser tempuser2 = top10.get(i1+1);
@@ -77,11 +74,13 @@ public class PapiFormatter {
                             top10.set(i, user);
                             break;
                         }
+                        i--;
                     }
                 }
             }
         }
 
+        topdeaths.append("Najwięcej śmierci:\n");
         for (int i = 0; i < 10; i++) {
             PvPUser user = top10.get(i);
             topdeaths.append(i).append(". ").append(user.getName()).append(": Smierci: ").append(user.getDeaths()).append("\n");
@@ -101,7 +100,8 @@ public class PapiFormatter {
                 if (top10.size() <=10 ) {
                     top10.add(user);
                 } else {
-                    for (int i = 10; i > 0; i--) {
+                    int i = Math.min(all.size(), 10);
+                    while (i > 0) {
                         if (user.getKills() > top10.get(i).getKills()) {
                             PvPUser tempuser = top10.get(i);
                             for (int i1 = i; i1 < 10; i1++) {
@@ -115,11 +115,13 @@ public class PapiFormatter {
                             top10.set(i, user);
                             break;
                         }
+                        i--;
                     }
                 }
             }
         }
 
+        topKills.append("Najwięcej zabójstw:\n");
         for (int i = 0; i < 10; i++) {
             PvPUser user = top10.get(i);
             topKills.append(i).append(". ").append(user.getName()).append(": Zabojstwa: ").append(user.getKills()).append("\n");
