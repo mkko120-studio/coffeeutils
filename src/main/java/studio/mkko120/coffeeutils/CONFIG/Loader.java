@@ -8,13 +8,7 @@ import java.io.File;
 
 public class Loader {
 
-    public YamlConfiguration config;
-
-    public void load() {
-        loadConfig("config.yml");
-    }
-
-    public YamlConfiguration loadConfig(String filename) {
+    public static YamlConfiguration loadConfig(String filename) {
         File file = new File(Coffeeutils.getInstance().getDataFolder() + filename);
         if (!file.exists()) {
             file.getParentFile().mkdirs();
@@ -28,6 +22,4 @@ public class Loader {
         }
         return config;
     }
-
-
 }

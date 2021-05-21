@@ -1,7 +1,7 @@
 package studio.mkko120.coffeeutils.PAPI;
 
-import studio.mkko120.coffeeutils.Coffeeutils;
 import studio.mkko120.coffeeutils.PVP.PvPUser;
+import studio.mkko120.coffeeutils.UTIL.Loaders;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class PapiFormatter {
 
     public static String topKDR() {
         StringBuilder topKDR = new StringBuilder();
-        ArrayList<PvPUser> all = (ArrayList<PvPUser>) Coffeeutils.getInstance().getPvPManager().getInstances().values();
+        ArrayList<PvPUser> all = new ArrayList<>(Loaders.getInstances().values());
         ArrayList<PvPUser> top10 = new ArrayList<>();
 
         for (PvPUser user : all) {
@@ -51,7 +51,7 @@ public class PapiFormatter {
 
     public static String topDeaths() {
         StringBuilder topdeaths = new StringBuilder();
-        ArrayList<PvPUser> all = new ArrayList<>(Coffeeutils.getInstance().getPvPManager().getInstances().values());
+        ArrayList<PvPUser> all = new ArrayList<>(Loaders.getInstances().values());
         ArrayList<PvPUser> top10 = new ArrayList<>();
 
         for (PvPUser user : all) {
@@ -92,7 +92,7 @@ public class PapiFormatter {
 
     public static String topKills() {
         StringBuilder topKills = new StringBuilder();
-        ArrayList<PvPUser> all = (ArrayList<PvPUser>) Coffeeutils.getInstance().getPvPManager().getInstances().values();
+        ArrayList<PvPUser> all =  new ArrayList<>(Loaders.getInstances().values());
         ArrayList<PvPUser> top10 = new ArrayList<>();
 
         for (PvPUser user : all) {
